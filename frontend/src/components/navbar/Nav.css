@@ -1,0 +1,45 @@
+.navbar {
+    margin: 10px 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo h3 {
+    margin-left: 5px;
+}
+
+.services {
+    width: 550px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.services button {
+    background: transparent;
+    outline: none;
+    border: none;
+    color: white;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+}
+
+.user i {
+    margin: 0 10px;
+    font-size: 20px;
+}
+
+.companies {
+    margin: 30px 0;
+    display: flex;
+    justify-content: space-around;
+}

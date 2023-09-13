@@ -1,0 +1,8 @@
+.nav-btn{
+    background: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-size: 17px;
+    margin-left: 40px;
+}

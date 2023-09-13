@@ -1,0 +1,12 @@
+.company{
+    width: 200px;
+    height: 200px;
+    padding:10px;
+    /* border: 2px solid black; */
+    border-radius: 10px;
+    transition: .8s ease-in-out;
+}
+.company:hover{
+    box-shadow: 5px 5px 50px rgb(178, 178, 178);
+    /* transform: scale(500px); */
+}
