@@ -4,9 +4,10 @@
   <h1> Real-time Virtual Try-On </h1>
   <hr>
   <img src="https://github.com/om9011/Virtual_Try_On/assets/98649066/f998ea39-7b91-4c92-a216-a98789dcfa8c" class="left" width='100%'>
-<br><hr>
+
 </div>
-    <p>The Virtual Try On System is a web-based application that allows users to browse and try on various products virtually. This project combines the MERN (MongoDB, Express.js, React.js, Node.js) stack for the frontend and Python for backend functionalities. Users can explore a wide range of products and see how they look on themselves through the power of augmented reality.</p>
+<br>
+    <p>The Virtual Try On System is a web-based application that allows users to browse and try on various products virtually. This project combines the MERN (MongoDB, Express.js, React.js, Node.js) stack for the frontend and Python for backend functionalities. Users can explore a wide range of products and see how they look on themselves through the power of augmented reality.</p><hr>
     <h2>♾️ Table of Contents</h2>
     <ul>
         <li><a href="#Model used">Model Used</a></li>
@@ -27,7 +28,7 @@ Key Advantages:
         <br><hr>
     <h2 id="architechture">👨‍💻 Image Generation Pipeline</h2>
     ![Screenshot 2023-09-15 232421](https://github.com/om9011/Virtual_Try_On/assets/98649066/0d996e91-70a1-43ec-b6f3-1ff76a169ae5)
-    <br><hr>
+    <br><br><hr>
     <h2 id="contributing">💡Datasets</h2> 
     <p>
     Dataset is taken from Github repo : 'https://github.com/yumingj/DeepFashion-MultiModal' 
