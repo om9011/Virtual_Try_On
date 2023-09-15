@@ -1,0 +1,111 @@
+/* Container for the entire product list */
+.product-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.all{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.search-bar {
+  margin-top: 20px; /* Move the search bar to the top */
+  margin-bottom: 20px;
+  text-align: center; /* Center the search bar */
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  width: 680px;
+}
+.filter-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+
+}
+
+.category-filters{
+  margin-left: 50px;
+}
+
+.category-filters label {
+  margin-right: 10px;
+  font-size: 16px;
+}
+
+.category-filters input[type="checkbox"][value="all"] {
+  display: none; /* Hide the "All" checkbox */
+}
+
+.category-filters label[for="all"]::before {
+  content: "All";
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+/* Checkbox styling */
+.category-filters input[type="checkbox"] {
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+/* Styling for checked checkboxes */
+.category-filters input[type="checkbox"]:checked + label::before {
+  content: "\2713"; /* Checkmark symbol */
+  color: #007bff; /* Blue color for checked checkboxes */
+}
+
+.product-item {
+  width: 300px; 
+  background-color: #fff;
+  border: 1px solid #e2e2e2;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Product Image styles */
+.product-item img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Product Title styles */
+.product-item h2 {
+  font-size: 1.25rem;
+  margin-top: 10px;
+}
+
+/* Product Price styles */
+.product-item p {
+  font-size: 1rem;
+  color: #333;
+  margin: 10px 0;
+}
+
+/* Product Link styles */
+.product-item a {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;  
+  display: block;
+}
+
+/* Hover Effect */
+.product-item:hover {
+  transform: scale(1.02);
+  transition: transform 0.2s ease-in-out;
+}

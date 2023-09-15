@@ -1,8 +1,9 @@
 .navbar {
-    margin: 10px 80px;
+    margin: 0 80px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    
 }
 
 .logo {
@@ -10,8 +11,9 @@
     align-items: center;
 }
 
-.logo h3 {
+.logo h1    {
     margin-left: 5px;
+    font-size: 20px;
 }
 
 .services {
@@ -35,7 +37,7 @@
 
 .user i {
     margin: 0 10px;
-    font-size: 20px;
+    font-size: 25px;
 }
 
 .companies {

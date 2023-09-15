@@ -2,7 +2,9 @@
 .half2 {
     width: 50%;
 }
-
+.max{
+    font-size: 40px;
+}
 .main {
     font-family: 'Roboto Slab', serif;
     display: flex;

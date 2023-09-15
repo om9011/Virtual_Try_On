@@ -20,6 +20,10 @@ const Header = () => {
                     color = "white" 
                     />
                 </div>
+                <div className='landing1'>
+                    <h1>ShopMart</h1>
+                    <p>With Virtual TRY-ON Feature : 'Try Before You Buy!'</p>
+                </div>
             </section>
             <div className='companies'>
                 {url.map((product) => (

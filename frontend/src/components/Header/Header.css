@@ -37,15 +37,39 @@ section {
 }
 
 .landing {
-    background: url('https://www.smartprix.com/bytes/wp-content/uploads/2017/09/mi-band-hrx-edition-featured-banner.jpg');
+    background: url('https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
     background-repeat: no-repeat;
     background-size: cover;
 }
+.landing1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    top: 200px;
+    background-color: rgba(5, 5, 5  ,0.7);
+    padding : 20px 60px;
+    
+}
+.landing1 h1{
+    font-size: 120px;
+    color: rgb(227,170,41)  ;
+    font-family: 'Fira Sans', sans-serif;
+    letter-spacing: 2px;
+}
+.landing1 p{
+    font-size: 20px;
+    font-family: 'Fira Sans', sans-serif;
+    letter-spacing: 2px;
+}
 
 .header {
-    background: transparent;
+    background-color: rgb(240, 255, 255, 0.7);
     color: rgb(0, 0, 0);
     padding: 10px 0;
     width: 100%;
-    position: fixed;
+    border-radius: 5px;
+    box-shadow: 0px 8px 4px rgb(0, 0, 0, 0.25) ;
 }

@@ -1,40 +1,12 @@
-import { useState } from 'react'
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import axios from 'axios';
 import "./Details.css"
-import Popup from '../../Page/Try_Om/Popup/Popup';
-import Try from '../../Page/Try_Om/Main_Pro/Try';
+import Try from "../../Page/Try_Om/Main_Pro/Try";
+import Popup from "../../Page/Try_Om/Popup/Popup";
 
 
-const product = {
-  name: 'Basic Tee 6-Pack',
-  price: '$192',
-  href: '#',
-  breadcrumbs: [
-    { id: 1, name: 'Men', href: '#' },
-    { id: 2, name: 'Clothing', href: '#' },
-  ],
-  images: [
-    {
-      src: 'https://tailwindui.com/img/ecommerce-images/product-page-02-secondary-product-shot.jpg',
-      alt: 'Two each of gray, white, and black shirts laying flat.',
-    },
-    {
-      src: 'https://tailwindui.com/img/ecommerce-images/product-page-02-tertiary-product-shot-01.jpg',
-      alt: 'Model wearing plain black basic tee.',
-    },
-    {
-      src: 'https://tailwindui.com/img/ecommerce-images/product-page-02-tertiary-product-shot-02.jpg',
-      alt: 'Model wearing plain gray basic tee.',
-    },
-    {
-      src: 'https://tailwindui.com/img/ecommerce-images/product-page-02-featured-product-shot.jpg',
-      alt: 'Model wearing plain white basic tee.',
-    },
-  ],
-  colors: [
-    { name: 'White', class: 'bg-white', selectedClass: 'ring-gray-400' },
-    { name: 'Gray', class: 'bg-gray-200', selectedClass: 'ring-gray-400' },
-    { name: 'Black', class: 'bg-gray-900', selectedClass: 'ring-gray-900' },
-  ],
+const details = {
   sizes: [
     { name: 'XXS', inStock: false },
     { name: 'XS', inStock: true },
@@ -48,79 +20,78 @@ const product = {
   description:
     'The Basic Tee 6-Pack allows you to fully express your vibrant personality with three grayscale options. Feeling adventurous? Put on a heather gray tee. Want to be a trendsetter? Try our exclusive colorway: "Black". Need to add an extra pop of color to your outfit? Our white tee has you covered.',
   highlights: [
-    'Hand cut and sewn locally',
-    'Dyed with our proprietary colors',
-    'Pre-washed & pre-shrunk',
-    'Ultra-soft 100% cotton',
-  ],
-  details:
-    'The 6-Pack includes two black, two white, and two heather gray Basic Tees. Sign up for our subscription service and be the first to get new, exciting colors, like our upcoming "Charcoal Gray" limited release.',
+      'Hand cut and sewn locally',
+      'Dyed with our proprietary colors',
+      'Pre-washed & pre-shrunk',
+      'Ultra-soft 100% cotton',
+    ],
 }
 
-const reviews = { href: '#', average: 4, totalCount: 117 }
+const reviews = { href: '#', average: 4, totalCount: 117 };
 
 export default function Details() {
+  const id = useParams();
+  const productid = id.productId
+  const [productDetails, setidDetails] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
-  const [mainImage, setMainImage] = useState(product.images[0].src);
-  const [currentSubImage, setCurrentSubImage] = useState(product.images[0].src);
 
-  const handleImageClick = (imageSrc) => {
-    setMainImage(imageSrc);
-    setCurrentSubImage(imageSrc);
-  };
+  useEffect(() => {
+    if (id) {
+      axios.get(`http://localhost:5000/product/${productid}`)
+        .then((response) => {
+          setidDetails(response.data);
+        })
+        .catch((error) => {
+          console.error('Error fetching id details:', error);
+        });
+    }
+  }, [productid]);
+
+  if (!productDetails) {
+    return <div>Loading...</div>;
+  }
+
 
   const togglepopup = () => {
     setIsOpen(!isOpen);
-  }
+  };
 
   return (
     <div className='main'>
       <div className='half1'>
         <div className='image-section'>
           <div className='main_div'>
-            <img src={mainImage} id='main_img' alt=''/>
-          </div>
-          <div className='mini_img'>
-            {product.images.map((subImage, index) => (
-              <img
-                key={index}
-                src={subImage.src}
-                id='sub_img'
-                onClick={() => handleImageClick(subImage.src)}
-                className={subImage.src === currentSubImage ? 'active' : ''}
-                alt={subImage.alt}
-              />
-            ))}
+            <img src={productDetails.imageSrc} id='main_img' alt='' />
           </div>
         </div>
       </div>
       <div className='half2'>
         <div className="info">
-          <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">{product.name}</h1>
+          <h1 className="max font-bold tracking-tight text-gray-900 sm:text-3xl">{productDetails.name}</h1>
         </div>
 
         <div className="info">
           <h2 className="sr-only">Product information</h2>
-          <p className="text-3xl tracking-tight text-gray-900">{product.price}</p>
+          <p className="text-4xl text-gray-900">₹{productDetails.price}</p>
         </div>
         <div className='desc info'>
           <p>
-            {product.description}
+            {details.description}
           </p>
         </div>
         <div className='info highlight'>
           <h3 className='text-xl font-semibold'>Highlights:</h3>
           <ul>
-            {product.highlights.map((highlight, index) => (
-              <li key={index} >{highlight}</li>
-            ))}
-          </ul>
+              {details.highlights.map((highlight, index) => (
+                <li key={index} >{highlight}</li>
+              ))}
+            </ul>
         </div>
         <hr className="info horizontal-line" />
         <div className="sizes info">
           <h3 className="text-xl font-semibold">Sizes:</h3>
           <div className="size-buttons">
-            {product.sizes.map((size, index) => (
+            {details.sizes.map((size, index) => (
               <button
                 key={index}
                 className="size-button"
@@ -157,5 +128,5 @@ export default function Details() {
         </div>
       </div>
     </div>
-  )
+  );
 }

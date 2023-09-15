@@ -1,9 +1,10 @@
+import { useNavigate } from "react-router-dom"
     const products = [
     {
         id: 1,
         name: 'Basic Tee',
         href: '#',
-        imageSrc: 'https://animedevta.com/cdn/shop/products/seagreenramji.png?v=1676365279&width=1000',
+        imageSrc: 'https://i.ibb.co/k6HSQ9x/product.png',
         imageAlt: "Front of men's Basic Tee in black.",
         price: '999',
         color: 'Black',
@@ -74,6 +75,7 @@
 ]
 
 export default function Example() {
+    const navigate = useNavigate();
     return (
         <>
             <div className="bg-white">
@@ -82,7 +84,7 @@ export default function Example() {
 
                     <div className="mt-8 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
                         {products.map((product) => (
-                            <div key={product.id} className="group relative">
+                            <div key={product.id} className="group relative" >
                                 <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
                                     <img
                                         src={product.imageSrc}
@@ -107,14 +109,19 @@ export default function Example() {
                     </div>
                 </div>
             </div>
-            <button style={{ 
+            <button 
+            style={{ 
             color: "black", 
             border: "1.2px solid black", 
             padding: "15px", 
             borderRadius: "10px",
             position:"relative",
             top : -50,
-            }}>View More</button>
+            }}
+            onClick={()=>{
+                navigate("/products")
+            }}
+            >View More</button>
         </>
     )
 }

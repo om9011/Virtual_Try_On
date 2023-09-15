@@ -61,7 +61,7 @@
 
 .input img,
 .output img {
-    width: 400px;
+    width:200px;
     height: 300px;
     border-radius: 10px;
 }
@@ -83,4 +83,15 @@
     border: transparent;
     border-radius: 10px;
     margin: 10px;
+}
+.btn-upload{
+    background-color: rgb(78, 70, 229);  
+    width: 300px;
+    height: 50px;
+    margin: 20px;
+    color: white;
+    border: transparent;
+    font-size: 18px;
+    border-radius: 10px;  
+
 }
